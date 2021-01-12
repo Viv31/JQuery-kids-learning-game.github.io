@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jquery Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    td{
+        cursor: pointer;
+        text-align: center;
+        height: 80px!important;
+        width: 80px!important;
+  
+      }
+  
+      td:hover{
+        background-color: rgba(0,0,0,0.7)!important;
+        box-shadow: 2px 2px 10px 10px lightgrey;
+        color: #fff;
+  
+      }
+      .container-fluid{
+        background-color: #21D4FD;
+      background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  
+        height: 100vh;
+      }
+  
+      #game_table{
+        box-shadow: 2px 2px 10px 10px lightgrey;
+  
+      }
+  
+      #my_div{
+        border:1px solid grey;
+        height: 500px;
+        width: 500px;
+        margin-left: 100px;
+        box-shadow: 2px 2px 10px 10px lightgrey;
+      }
+      #my_div img{
+        height: 500px!important;
+        width: 500px!important;
+      }
+  
+  
+      @media (max-width: 320px) {
+     #my_div{
+        border:1px solid grey;
+        height: 300px;
+        width: 300px;
+        margin-left: 100px;
+        box-shadow: 2px 2px 10px 10px lightgrey;
+      }
+      #my_div img{
+        height: 300px!important;
+        width: 300px!important;
+      }
+  }
+  @media (min-width: 321px) and (max-width: 480px) {
+     html {
+        font-size:0.20em;
+     }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h4 class="text-center">JQUERY SIMPLE LEARNING GAME FOR KIDS</h4>
+    <div class="row">
+      <div class="col-md-6" id="single_div">
+        <h1 id="name_of_block" class="text-center text-white"></h1>
+        <div id="my_div"></div>
+      </div>
+      <div class="col-md-6">
+        <table style="margin-top: 10px;" id="game_table">
+          <tr>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="one" value="Apple">A</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="two" value="ball">B</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="three">C</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="four">D</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="five">E</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="six">F</td>
+          </tr>
+          <tr>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="one">G</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="two">H</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="three">I</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="four">J</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="five">K</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="six">L</td>
+          </tr>
+          <tr>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="one">M</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="two">N</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="three">O</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="four">P</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="five">Q</td>
+            <td style="width:80px; background-color: white;height: 80px;border:1px solid grey;" id="six">R</td>
+          </tr>
+          <tr>
+            <td style="width:80px; background-color: white;height: 50px;border:1px solid grey;" id="one">S</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="two">T</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="three">U</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="four">V</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="five">W</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="six">X</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="six">Y</td>
+            <td style="width:50px; background-color: white;height: 50px;border:1px solid grey;" id="six">Z</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+  
+      $("#my_div").hide();
+        $("#name_of_block").hide();
+  
+       $("#game_table").on("click", "tr td", function() {
+      // alert($( this ).text());
+       if($( this ).text() == "A" ){
+        $("#my_div").show();
+        $("#name_of_block").show();
+        
+        var img = "<img src='apple.jpg' height='50' width='50'/>";
+        img.src = "apple.jpg";
+        $( this ).text("Apple");
+        $( this ).append(img);
+        $("#name_of_block").text("Apple");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='apple.jpg'>");
+        
+  
+       }
+       else if($( this ).text()== "B"){
+        //$( this ).html("BALL");
+        
+        $("#my_div").show();
+        $("#name_of_block").show();
+  
+        var img = "<img src='ball.jpg' height='50' width='50'/>";
+        img.src = "ball.jpg";
+  
+        $( this ).text("Ball");
+        $( this ).append(img);
+        $("#name_of_block").text("Ball");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='ball.jpg'>");
+  
+  
+  
+       }
+       else if($( this ).text()== "C"){
+        $("#my_div").show();
+        $("#name_of_block").show();
+  
+        var img = "<img src='cat.jpg' height='50' width='50'/>";
+        img.src = "ball.jpg";
+  
+        $( this ).text("Cat");
+        $( this ).append(img);
+        $("#name_of_block").text("Cat");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='cat.jpg'>");
+  
+  
+       }
+       else if($( this ).text()== "D"){
+  
+        $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='dog.jpg' height='50' width='50'/>";
+        img.src = "dog.jpg";
+  
+        $( this ).text("Dog");
+        $( this ).append(img);
+        $("#name_of_block").text("Dog");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='dog.jpg'>");
+  
+  
+       }
+       else if($( this ).text()== "E"){
+  
+        $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='elephant.jpg' height='50' width='50'/>";
+        img.src = "elephant.jpg";
+  
+        $( this ).text("Elephant");
+        $( this ).append(img);
+        $("#name_of_block").text("Elephant");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='elephant.jpg'>");
+  
+       }
+        else if($( this ).text()== "F"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='fish.jpg' height='50' width='50'/>";
+        img.src = "fish.jpg";
+  
+        $( this ).text("Fish");
+        $( this ).append(img);
+        $("#name_of_block").text("Fish");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='fish.jpg'>");
+  
+       }
+    else if($( this ).text()== "G"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='grapes.jpg' height='50' width='50'/>";
+        img.src = "grapes.jpg";
+  
+        $( this ).text("Grapes");
+        $( this ).append(img);
+        $("#name_of_block").text("Grapes");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='grapes.jpg'>");
+  
+       }
+  
+        else if($( this ).text()== "H"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='hen.jpg' height='50' width='50'/>";
+        img.src = "grapes.jpg";
+  
+        $( this ).text("Hen");
+        $( this ).append(img);
+        $("#name_of_block").text("Hen");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='hen.jpg'>");
+  
+       }
+  
+       else if($( this ).text()== "I"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='ice_cream.png' height='50' width='50'/>";
+        img.src = "ice_cream.png";
+  
+        $( this ).text("Ice Cream");
+        $( this ).append(img);
+        $("#name_of_block").text("Ice Cream");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='ice_cream.png'>");
+  
+       }
+  
+        else if($( this ).text() == "J"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='jug.jpg' height='50' width='50'/>";
+        img.src = "jug.jpg";
+  
+        $( this ).text("Jug");
+        $( this ).append(img);
+        $("#name_of_block").text("Jug");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='jug.jpg'>");
+  
+       }
+  
+  else if($( this ).text() == "K"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='kite.jpg' height='50' width='50'/>";
+        img.src = "jug.jpg";
+  
+        $( this ).text("Kite");
+        $( this ).append(img);
+        $("#name_of_block").text("Kite");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='kite.jpg'>");
+  
+       }
+  
+  else if($( this ).text() == "L"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='lion.jpg' height='50' width='50'/>";
+        img.src = "lion.jpg";
+  
+        $( this ).text("Lion");
+        $( this ).append(img);
+        $("#name_of_block").text("Lion");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='lion.jpg'>");
+  
+       }
+       else if($( this ).text() == "M"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='monkey.jpg' height='50' width='50'/>";
+        img.src = "monkey.jpg";
+  
+        $( this ).text("Monkey");
+        $( this ).append(img);
+        $("#name_of_block").text("Monkey");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='monkey.jpg'>");
+  
+       }
+  
+       else if($( this ).text() == "N"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='nest.jpg' height='50' width='50'/>";
+        img.src = "nest.jpg";
+  
+        $( this ).text("Nest");
+        $( this ).append(img);
+        $("#name_of_block").text("Nest");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='nest.jpg'>");
+  
+       }
+  
+   else if($( this ).text() == "O"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='orange.jpg' height='50' width='50'/>";
+        img.src = "orange.jpg";
+  
+        $( this ).text("Orange");
+        $( this ).append(img);
+        $("#name_of_block").text("Orange");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='orange.jpg'>");
+  
+       }
+  
+        else if($( this ).text() == "P"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='parrot.png' height='50' width='50'/>";
+        img.src = "parrot.jpg";
+  
+        $( this ).text("Parrot");
+        $( this ).append(img);
+        $("#name_of_block").text("Parrot");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='parrot.png'>");
+  
+       }
+  
+        else if($( this ).text() == "Q"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='queen.png' height='50' width='50'/>";
+        img.src = "queen.png";
+  
+        $( this ).text("Queen");
+        $( this ).append(img);
+        $("#name_of_block").text("Queen");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='queen.png'>");
+  
+       }
+  
+  
+       else if($( this ).text() == "R"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='rabbit.jpg' height='50' width='50'/>";
+        img.src = "rabbit.jpg";
+  
+        $( this ).text("Rabbit");
+        $( this ).append(img);
+        $("#name_of_block").text("Rabbit");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='rabbit.jpg'>");
+  
+       }
+  
+  else if($( this ).text() == "S"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='sun.jpg' height='50' width='50'/>";
+        img.src = "sun.jpg";
+  
+        $( this ).text("Sun");
+        $( this ).append(img);
+        $("#name_of_block").text("Sun");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='sun.jpg'>");
+  
+       }
+  
+       else if($( this ).text() == "T"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='tiger.jpg' height='50' width='50'/>";
+        img.src = "tiger.jpg";
+  
+        $( this ).text("Tiger");
+        $( this ).append(img);
+        $("#name_of_block").text("Tiger");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='tiger.jpg'>");
+  
+       }
+  
+   else if($( this ).text() == "U"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='umbrella.jpeg' height='50' width='50'/>";
+        img.src = "umbrella.jpeg";
+  
+        $( this ).text("Umbrella");
+        $( this ).append(img);
+        $("#name_of_block").text("Umbrella");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='umbrella.jpeg'>");
+  
+       }
+  
+       else if($( this ).text() == "V"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='van.jpg' height='50' width='50'/>";
+        img.src = "van.jpg";
+  
+        $( this ).text("Van");
+        $( this ).append(img);
+        $("#name_of_block").text("Van");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='van.jpg'>");
+  
+       }
+  
+  else if($( this ).text() == "W"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='watch.jpg' height='50' width='50'/>";
+        img.src = "watch.jpg";
+  
+        $( this ).text("Watch");
+        $( this ).append(img);
+        $("#name_of_block").text("Watch");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='watch.jpg'>");
+  
+       }
+  
+       else if($( this ).text() == "X"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='xmas.jpg' height='50' width='50'/>";
+        img.src = "xmas.jpg";
+  
+        $( this ).text("X-Mas");
+        $( this ).append(img);
+        $("#name_of_block").text("X-Mas");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='xmas.jpg'>");
+  
+       }
+  
+  else if($( this ).text() == "Y"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='yak.jpg' height='50' width='50'/>";
+        img.src = "yak.jpg";
+  
+        $( this ).text("Yak");
+        $( this ).append(img);
+        $("#name_of_block").text("Yak");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='yak.jpg'>");
+  
+       }
+  
+       else if($( this ).text() == "Z"){
+           $("#my_div").show();
+        $("#name_of_block").show();
+        var img = "<img src='zebra.jpg' height='50' width='50'/>";
+        img.src = "zebra.jpg";
+  
+        $( this ).text("Zebra");
+        $( this ).append(img);
+        $("#name_of_block").text("Zebra");
+        $("#my_div").text("");
+        $("#my_div").append("<img src='zebra.jpg'>");
+        $("td").prop("disabled",true);
+  
+       }
+  
+  
+  
+  
+     });
+    });
+  </script>
+</body>
+
+</html>
